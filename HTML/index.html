@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" src="../JS/jquery-1.8.3.js"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGWV6a4gRSf-KAX28AnSK5nnf0dxQuY4s&sensor=false">
+    </script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="moClient/swfobject.js"></script>
+    <script type="text/javascript" src="moClient/jquery.moClient.js"></script>
+    <script type="text/javascript" src="moClient/jquery.moApps.js"></script>
+    <script type="text/javascript" src="../JS/index.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap_spruce.min.css"/>
+    <link rel="stylesheet" href="../CSS/index.css"/>
+  </head>
+  <body>
+  	
+
+	<div class="modal hide fade" id="myModal">
+		<div class="modal-header">
+			<button class="close" data-dismiss="modal"></button>
+			<h3>Anomaly App</h3>
+		</div>
+		<div class="modal-body">
+			<p>This application let's you monitor for atypical behavior in multiple video streams.</p>
+			<p>There are 8 video streams grouped into 2 clusters of 4. When zoomed in, the individual streams are represented by markers. When zoomed out, the streams are condensed into 2 markers, one per cluster. Click on the marker to view the associated stream.</p>
+			<p>The application takes some time to launch the streams, so please be patient. It has completed launching the streams when the markers begin to be periodically resized according to their anomaly level.</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+		</div>
+	</div>
+
+  	
+  	<div class="navbar">
+	  <div class="navbar-inner">
+	    <a class="brand" href="#">Anomaly App</a>
+	    <ul class="nav">
+	      <li class="active"><a href="#">Home</a></li>
+	      <li><a href="#myModal" role="button" data-toggle="modal">About</a></li>
+	    </ul>
+	  </div>
+	</div>
+  	<div class="container-fluid">
+  		<div class="row-fluid">
+  			<div id="toolbar" class="span6 well">
+  				<div class="row-fluid">
+  					<h3>Streams of Interest:</h3>	
+  				</div>
+  				<div class="row-fluid">
+					<button id="btnFirst" class="btn btn-danger span4">crowd1</button>
+					<button id="btnSecond" class="btn btn-warning span4">crowd2</button>
+					<button id="btnThird" class="btn btn-primary span4">crowd3</button>
+				</div>
+				<div class="row-fluid">
+					<div id="divFirst" style="background:red"></div>
+				</div>
+				<div class="row-fluid">
+					<div id="divSecond" style="background:red" ></div>
+				</div>
+				<div class="row-fluid">
+					<div id="divThird" style="background:red"></div>
+				</div>
+				<hr/>
+				<div class="row-fluid">
+					<h3>Cluster of Interest</h3>
+				</div>
+  				<h4 id="txtAnoClus">Anomalous Cluster: </h4>
+  				<h4 id="txtPrevClus">Previous Cluster: </h4>
+  				<hr/>
+  				<div id="anoVid" style="width:650px;height:350px;"></div>
+  			</div>
+  			<div id="map_canvas" class="span6"></div>
+  		</div>
+  	</div>
+  </body>
+</html>
